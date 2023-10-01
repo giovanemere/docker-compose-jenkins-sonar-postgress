@@ -10,7 +10,7 @@ services:
         hard: 131072
     restart: unless-stopped
     environment:
-      - sonar.jdbc.url=jdbc:postgresql://10.0.0.4:5432/sonarqube
+      - sonar.jdbc.url=jdbc:postgresql://172.178.98.221:5432/sonarqube
       - sonar.jdbc.username=postgres
       - sonar.jdbc.password=Banco123*
     ports:
