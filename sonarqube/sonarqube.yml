@@ -1,0 +1,30 @@
+version: "3"
+services:
+  sonarqube:
+    image: sonarqube:9.9-community
+    container_name: sonarqube
+    ulimits:
+      nproc: 131072
+      nofile:
+        soft: 8192
+        hard: 131072
+    restart: unless-stopped
+    environment:
+      - sonar.jdbc.url=jdbc:postgresql://10.0.0.4:5432/sonarqube
+      - sonar.jdbc.username=postgres
+      - sonar.jdbc.password=Banco123*
+    ports:
+      - "9000:9000"
+      - "9092:9092"
+    volumes:
+      - "./sonarqube_conf:/opt/sonarqube/conf"
+      - "./sonarqube_data:/opt/sonarqube/data"
+      - "./sonarqube_extensions:/opt/sonarqube/extensions"
+      - "./sonarqube_bundled-plugins:/opt/sonarqube/lib/bundled-plugins"
+
+
+volumes:
+  sonarqube_bundled-plugins:
+  sonarqube_conf:
+  sonarqube_data:
+  sonarqube_extensions:

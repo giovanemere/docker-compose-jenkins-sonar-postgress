@@ -1,0 +1,14 @@
+sudo chmod -R 777 /home/giovanemere/docker-compose/
+cd /home/giovanemere/docker-compose/sonarqube/
+docker-compose -f sonarqube.yml up -d
+
+vi /etc/hosts
+
+docker exec -it postgres_database_1  psql -U postgres
+	CREATE DATABASE sonarqube;
+      DROP DATABASE jsonarqubeira;
+      	\l
+      	\q
+
+
+docker-compose -f sonarqube.yml down

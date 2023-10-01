@@ -1,0 +1,11 @@
+cd /home/giovanemere/docker-compose/jenkins
+docker-compose -f jenkins.yml up -d
+
+https://172.178.98.221:8491/devops/jenkins
+http://172.178.98.221:8091/devops/jenkins 
+http://172.178.98.221:8091/devops/jenkins/login?from=%2Fdevops%2Fjenkins%2F
+
+vi /etc/hosts
+
+
+docker exec -it a3b42cb4750c bash
